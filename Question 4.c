@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int sequencer(int current, int max, int count) {
+void sequencer(int current, int max, int count) {
     int next;
     scanf("%d", &next);
     if (next == 0) {
         printf("(%d; %d)", max, count);
-        return 0;
+        return;
     }
     if (next > max) {
         max = next;
@@ -13,7 +13,7 @@ int sequencer(int current, int max, int count) {
     } else if (next == max) {
         count++;
     }
-    return sequencer(next, max, count);
+    sequencer(next, max, count);
 }
 
 int main() {
